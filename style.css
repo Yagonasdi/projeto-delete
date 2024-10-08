@@ -1,0 +1,17 @@
+body{
+    background-image: url("assets/livro.jpg");
+    display: flex;
+    background-size: cover;
+}
+
+#a{
+    display: flex;
+    padding-top: 25%;
+    padding-left: 35%;
+}
+
+button:hover{
+    background-color: black;
+    border: 5px solid red;
+    color: aliceblue;
+}
