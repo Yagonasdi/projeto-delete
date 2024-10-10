@@ -1,0 +1,38 @@
+body {
+    background-image: url(assets/livro.jpg);
+    display: flex;
+    background-size: cover;
+    --tx-color: antiquewhite;
+}
+
+#a {
+    display: flex;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    /* border: 5px solid black; */
+}
+
+button:hover {
+    background-color: black;
+    border: 5px solid red;
+    color: var(--tx-color);
+}
+
+#nome {
+    font-size: large;
+    color: var(--tx-color);
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    margin-top: 50px;
+    left: 40%;
+    position: absolute;
+    font-size: xx-large;
+    background: linear-gradient(to left, yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    /* border: 5px solid black; */
+}

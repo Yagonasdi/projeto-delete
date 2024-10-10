@@ -1,0 +1,34 @@
+nav{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    /* border: 5px solid black; */
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    /* border: 5px solid black; */
+    /* justify-content: space-between; */
+    flex-direction: row-reverse;
+    background: linear-gradient( yellow, red);
+    -webkit-background-clip: text;
+
+}
+
+img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+nav:has(li:hover){
+    color: var(--tx-color);
+}
+
+#logo{
+
+}
