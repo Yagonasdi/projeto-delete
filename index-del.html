@@ -12,19 +12,24 @@
 
     <nav>
         <a href="#" id="logo"><img src="assets/logotipo.jpeg" alt="logotipo"></a>
-        <ul>
-            <li><a href="../cadastro_livro.html" style="color: transparent;">Cadastro de Livro</a></li>
-        </ul>
+        <a href="../index.html" target="_blank"  style="color: antiquewhite;">Cadastro de Livro</a>
+
     </nav>
 
     <div id="a">
-        <form id="delete-form">
-            <label for="title" id="nome" style="color: antiquewhite;">Nome do Livro:</label>
+        <form id="delete-form" action="/api/livros" method="POST">
+            <label for="title" id="nome">título:</label>
             <input type="text" id="title" name="booktitle" required>
 
             <button type="submit">Deletar Livro</button>
         </form>
     </div>
+
+    <footer>
+        <div class="marquee-container">
+            <span class="marquee-text">A leitura reaviva a memória e nos coloca a par do desconhecido.</span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

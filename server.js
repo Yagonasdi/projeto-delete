@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
+const fetch = require('node-fetch');
 
+const app = express();
 // Simulação de um "banco de dados" (uma lista de livros para deletar)
 let livros = [
     { title: 'Livro A' },
@@ -16,17 +17,29 @@ app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rota para deletar o livro
-app.post('/delete-livro', (req, res) => {
-    const title = req.body.booktitle;
+app.delete('/api/livros', async (req, res) => {
+    const { title } = req.body;
 
-    // Filtra o livro a ser deletado
-    livros = livros.filter(livro => livro.title !== title);
+    try {
+        // Altere a URL aqui para corresponder ao seu banco de dados
+        const response = await fetch(`http://localhost:4000/api/livros/${title}`, {
+            method: 'DELETE',
+        });
 
-    console.log(`Livro "${title}" foi deletado.`);
-    res.send(`Livro "${title}" foi deletado.`);
+        if (response.ok) {
+            console.log(`Livro "${title}" foi deletado do banco de dados.`);
+            res.send(`Livro "${title}" foi deletado.`);
+        } else {
+            console.error('Erro ao deletar livro do banco de dados.');
+            res.status(response.status).send('Erro ao deletar livro do banco de dados.');
+        }
+    } catch (error) {
+        console.error('Erro na requisição ao banco de dados:', error);
+        res.status(500).send('Erro ao conectar ao banco de dados.');
+    }
 });
 
-// Servidor rodando na porta 3000
+// Servidor rodando na porta 5500
 app.listen(5500, () => {
     console.log('Servidor rodando em http://localhost:5500');
 });

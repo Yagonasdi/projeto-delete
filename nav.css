@@ -12,9 +12,9 @@ nav ul{
     width: 100%;
     /* border: 5px solid black; */
     /* justify-content: space-between; */
-    flex-direction: row-reverse;
-    background: linear-gradient( yellow, red);
-    -webkit-background-clip: text;
+    /* flex-direction: row-reverse; */
+    /* background: linear-gradient( yellow, red); */
+    /* -webkit-background-clip: text; */
 
 }
 
@@ -25,10 +25,3 @@ img{
     border-radius: 10px;
 }
 
-nav:has(li:hover){
-    color: var(--tx-color);
-}
-
-#logo{
-
-}
